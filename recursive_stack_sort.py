@@ -16,7 +16,7 @@
 
 # python syntax pop, append, [-1]
 
-def sort_stack(num):
+def sort_stack(arr, num):
     # NOTE: Assuming arr = [-3,18,14,-5] for explanation
     if num > arr[-1]:
         arr.append(num)
@@ -39,7 +39,7 @@ def recursive_stack_sort(arr):
     
     popped = arr.pop()
     recursive_stack_sort(arr)
-    sort_stack(popped)
+    sort_stack(arr, popped)
 
 
 
