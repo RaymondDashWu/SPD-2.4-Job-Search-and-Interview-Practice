@@ -1,4 +1,7 @@
 # Given a singly-linked list, find the middle item in the list.
+# Example: If the given linked list is A → B → C → D → E, return C.
+# Assumptions: The length (n) is odd so the linked list has a definite middle.
+
 
 class Node(object):
 

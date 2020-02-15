@@ -1,4 +1,5 @@
 # Given a singly-linked list, reverse the order of the list by modifying the nodes’ links.
+# Example: If the given linked list is A → B → C → D → E, nodes should be modified/rearranged so the list becomes E → D → C → B → A.
 
 class Node(object):
     def __init__(self, data):
