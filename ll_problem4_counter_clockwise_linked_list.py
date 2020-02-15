@@ -46,13 +46,7 @@ class LinkedList(object):
         while node is not None:
             print(node.data)
             node = node.next
-# A -> B -> C , k = 1
-# keep track of number of node traversals
-# keep track of original_head
 
-# when node.next is none change modified head to point to k + 1 node
-# tail points to original head
-# change modified head to self.head
     def rotate_counter_clockwise(self, k):
         traversal_counter = 0
         original_head = self.head
