@@ -34,12 +34,17 @@ class LinkedList(object):
                 break
         self.head = prev
 
-        # def traverse_recursive(curr, prev):
-        #     if not curr:
-        #         return prev
+    def reverse_recursive(self):
+        def _reverse_recursive(curr, prev):
+            if curr is None:
+                return prev
 
-        #     next = cur.next
-        # self.head = traverse_recursive()
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+            return _reverse_recursive(curr, prev)
+        self.head = _reverse_recursive(self.head, None)
 
 
 if __name__ == "__main__":
@@ -55,6 +60,8 @@ if __name__ == "__main__":
 
     fourth = Node("D")
     third.next = fourth
-    ll.reverse()
+
+    # ll.reverse()
+    ll.reverse_recursive()
     print(ll.print_ll())
     print("Head of LL", ll.head.data)
