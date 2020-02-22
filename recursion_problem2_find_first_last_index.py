@@ -16,7 +16,6 @@
 # after target is found, check to see if name to left is target
 # keep going until no longer equal to target
 
-# TODO temporarily made right 26. Figure out how to do later
 def find_indexes(arr_instructors, target, left, right, middle, ind_arr = []):
     if len(ind_arr) == 2:
         return ind_arr
@@ -30,9 +29,6 @@ def find_indexes(arr_instructors, target, left, right, middle, ind_arr = []):
             return find_indexes(arr_instructors, target, left = 0, right = middle, middle = middle)
         else:
             return find_indexes(arr_instructors, target, left = middle, right = right, middle = middle)
-    
-    # if arr_instructors[middle] == target:
-    #     return True
 
     # after target is found, check to see if name to left is target
     # keep going until no longer equal to target
@@ -48,9 +44,6 @@ def find_indexes(arr_instructors, target, left, right, middle, ind_arr = []):
                 # break
             else:
                 return find_indexes(arr_instructors, target, left, right, middle = middle + 1)
-
-    # while (arr_instructors[middle-1], arr_instructors[middle], arr_instructors[middle+1]) != target:
-    #     return find_indexes(arr_instructors, target, middle = 1, ind_arr = [])
 
 if __name__ == "__main__":
     instructors = ["Adriana", "Adriana", "Alan", "Alan", "Alan", "Alan", "Alan", "Braus", "Braus", "Braus", "Braus", "Dan", "Dan", "Dan", "Dan", "Dan", "Dani", "Dani", "Jess", "Meredith", "Milad", "Milad", "Mitchell", "Mitchell", "Mitchell", "Mitchell"]
