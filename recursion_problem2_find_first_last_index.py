@@ -41,7 +41,6 @@ def find_indexes(arr_instructors, target, left, right, middle, ind_arr = []):
         else:
             if len(ind_arr) == 0:
                 ind_arr.append(middle) # appending lower bound
-                # break
             else:
                 return find_indexes(arr_instructors, target, left, right, middle = middle + 1)
 
