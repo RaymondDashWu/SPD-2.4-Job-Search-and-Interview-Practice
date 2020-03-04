@@ -15,9 +15,6 @@
 
 from collections import deque
 
-
-# TODO Solution can't handle 2 last level numbers
-
 class BinaryTreeNode(object):
     def __init__(self, data):
         self.data = data
@@ -28,24 +25,25 @@ class BinarySearchTree(object):
     def __init__(self):
         self.root = None
 
-    def two_sum_in_order_recursive(self, node, target, complements = set(), output = []):
+    def two_sum_pre_order_recursive(self, node, target, complements = set()):
         if len(complements) == 0: # initialize by adding root complement
             complements.add(target - node.data)
-            
         if node.left:
             if node.left.data in complements:
                 return [(target - node.left.data), node.left.data]
             else:
                 complements.add(target - node.left.data)
-            self.two_sum_in_order_recursive(node.left, target, complements)
+            left_ret = self.two_sum_pre_order_recursive(node.left, target, complements)
+            if left_ret is not None: # Conditional return for if both numbers on left side
+                return left_ret
         if node.right:
             if node.right.data in complements:
                 return [(target - node.right.data), node.right.data]
             else:
                 complements.add(target - node.right.data)
-            self.two_sum_in_order_recursive(node.right, target, complements)
-
-
+            right_ret = self.two_sum_pre_order_recursive(node.right, target, complements)
+            if right_ret is not None: # Conditional return for if both numbers on right side
+                return right_ret
 
 if __name__ == "__main__":
     bst = BinarySearchTree()
@@ -66,8 +64,8 @@ if __name__ == "__main__":
     level_2rr = BinaryTreeNode(9)
     level_1r.right = level_2rr
 
-    # print(bst.two_sum_in_order_recursive(node = bst.root, target = 10))
-    # print(bst.two_sum_in_order_recursive(node = bst.root, target = 11))
-    # print(bst.two_sum_in_order_recursive(node = bst.root, target = 80))
-    # print(bst.two_sum_in_order_recursive(node = bst.root, target = 4))
-    # print(bst.two_sum_in_order_recursive(node = bst.root, target = 12))
+    print(bst.two_sum_pre_order_recursive(node = bst.root, target = 10))
+    # print(bst.two_sum_pre_order_recursive(node = bst.root, target = 11))
+    # print(bst.two_sum_pre_order_recursive(node = bst.root, target = 80))
+    # print(bst.two_sum_pre_order_recursive(node = bst.root, target = 4))
+    # print(bst.two_sum_pre_order_recursive(node = bst.root, target = 12))

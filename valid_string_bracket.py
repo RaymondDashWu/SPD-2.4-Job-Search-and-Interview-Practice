@@ -20,6 +20,8 @@
 # Assumptions
 # there is a pre-made dict that contains the associated brackets
 
+# NOTE TODO Unfinished
+
 bracket_dict = {
     "{":"}",
     "(":")",
@@ -56,3 +58,5 @@ if __name__ == "__main__":
     assert test_valid(string) == True
     string = "<tag></tag>"
     assert test_valid(string) == True
+    string = "<tag><tag>"
+    assert test_valid(string) == False

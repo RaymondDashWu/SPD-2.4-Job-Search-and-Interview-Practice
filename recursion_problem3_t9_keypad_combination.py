@@ -18,6 +18,8 @@
 # recursively call after number is iterated through at letter + 1
 # append combined letter string to output? Unsure of order
 
+# NOTE TODO Unfinished
+
 t9_keypad_mappings = {
     2: ("a", "b", "c"),
     3: ("d", "e", "f"),

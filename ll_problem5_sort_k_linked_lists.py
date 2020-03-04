@@ -10,7 +10,7 @@
 # 1 pointer for prev, curr, next
 # compare curr pointers and use prev pointers to change next
 
-# NOTE Unfinished
+# NOTE TODO Unfinished
 
 class Node(object):
 
