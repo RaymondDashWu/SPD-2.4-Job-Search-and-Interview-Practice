@@ -48,6 +48,8 @@ def test_valid(string):
         return False
 
 if __name__ == "__main__":
+    string = "(])"
+    assert test_valid(string) == False
     string = ""
     assert test_valid(string) == True
     string = "{[()]}"

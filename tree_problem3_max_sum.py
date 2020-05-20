@@ -61,7 +61,7 @@ class BinaryTree(object):
 
     def helper_path_sum(self, node):
         """Recursively traverses left + right nodes until leaves are reached. Then recursively finds
-        best path to take from the bottom up"""
+        best path to take from the bottom up aka post order traversal"""
         if node == None: # When leaf is reached
             return 0
         left = max(0, self.helper_path_sum(node.left)) # traverses left node until leaf is reached
